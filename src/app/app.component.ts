@@ -1,18 +1,29 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import { PrimeNGConfig } from 'primeng/api';
+
+import { MenuComponent } from './shared';
+
+// Configuración local de la APP
+import localeEsGT from '@angular/common/locales/es-GT';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeEsGT);
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet></router-outlet>
-  `,
+  imports: [RouterOutlet, MenuComponent],
+  template: ` <app-menu /> <router-outlet />`,
   styles: [],
 })
 export class AppComponent {
-  title = 'Pipes-app';
+  // title = 'hAnsS espiNOzA';
+
+  #primeNgConfig = inject(PrimeNGConfig);
+
+  ngOnInit() {
+    this.#primeNgConfig.ripple = true;
+  }
 }

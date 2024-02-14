@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-dark-purple/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+/** Para poder empezar con el proyecto e importar los estilos de arriba es necesario
+    1- Importar PrimeNG en este caso se usa yarn para el gestor de paquetes entonces en consola /**'yarn add primeng'
+    2- Importar PrimeFlex en este caso se usa yarn para el gestor de paquetes entonces en consola /**'yarn add primeflex'
+*/
